@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # from sklearn.model_selection import train_test_split
 
 # from src.data_loader import load_dataset
@@ -180,6 +181,8 @@
 #     }
     
     
+=======
+>>>>>>> 855406a (Initial commit)
 # ============================================================
 # AutoDS - Main Machine Learning Pipeline
 # ============================================================
@@ -198,6 +201,22 @@ from sklearn.model_selection import train_test_split
 
 from src.data_loader import load_dataset
 
+<<<<<<< HEAD
+=======
+from src.schema_analyzer import (
+    analyze_schema
+)
+
+from src.data_quality import (
+    analyze_data_quality,
+    save_data_quality_report
+)
+
+from src.eda import (
+    generate_eda
+)
+
+>>>>>>> 855406a (Initial commit)
 from src.profiler import (
     profile_dataset,
     detect_feature_types
@@ -261,6 +280,61 @@ def run_autods(
         f"Columns : {df.shape[1]}"
     )
 
+<<<<<<< HEAD
+=======
+# ========================================================
+# PHASE 2
+# Intelligent Schema Analysis
+# ========================================================
+
+    print(
+        "\nAnalyzing dataset schema..."
+    )
+
+    df, schema_report = analyze_schema(
+        df,
+        target
+    )
+
+    print(
+        "\nSchema analysis completed."
+    )
+
+    print(
+        "Converted numeric columns:",
+        schema_report[
+            "converted_numeric_columns"
+        ]
+    )
+
+    print(
+        "ID columns:",
+        schema_report[
+            "id_columns"
+        ]
+    )
+
+    print(
+        "Constant columns:",
+        schema_report[
+            "constant_columns"
+        ]
+    )
+
+    print(
+        "High-cardinality columns:",
+        schema_report[
+            "high_cardinality_columns"
+        ]
+    )
+
+    print(
+        "Excluded from ML:",
+        schema_report[
+            "excluded_columns"
+        ]
+    )
+>>>>>>> 855406a (Initial commit)
 
     # ========================================================
     # STEP 2
@@ -311,11 +385,147 @@ def run_autods(
         target
     )
 
+<<<<<<< HEAD
+=======
+    # ========================================================
+    # PHASE 2
+    # Data Quality Analysis
+    # ========================================================
+
+    print(
+        "\nRunning data quality analysis..."
+    )
+
+    quality_report = (
+        analyze_data_quality(
+            df,
+            target,
+            problem_type,
+            schema_report
+        )
+    )
+
+
+    quality_report_path = (
+        "artifacts/data_quality/"
+        "data_quality_report.json"
+    )
+
+
+    save_data_quality_report(
+        quality_report,
+        quality_report_path
+    )
+
+
+    print(
+        "\nData Quality Score:",
+        quality_report[
+            "quality_score"
+        ],
+        "/ 100"
+    )
+
+
+    print(
+        "Quality warnings:"
+    )
+
+    for warning in quality_report[
+        "warnings"
+    ]:
+
+        print(
+            "-",
+            warning
+        )
+
+
+    print(
+        "\nData quality report saved:"
+    )
+
+    print(
+        quality_report_path
+    )
+
+    # ========================================================
+    # PHASE 2
+    # Automated EDA
+    # ========================================================
+
+    print(
+        "\nGenerating automated EDA..."
+    )
+
+
+    eda_files = generate_eda(
+        df,
+        target,
+        problem_type,
+        output_directory="artifacts/eda"
+    )
+
+
+    print(
+        f"EDA charts generated: {len(eda_files)}"
+    )
+
+
+    print(
+        "\nEDA files:"
+    )
+
+    for eda_file in eda_files:
+
+        print(
+            "-",
+            eda_file
+        )
+
+    # ========================================================
+    # SAVE PHASE-2 PROCESSED DATASET
+    # ========================================================
+
+    processed_directory = Path(
+        "data/processed"
+    )
+
+    processed_directory.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
+    processed_path = (
+        processed_directory
+        /
+        "phase2_normalized.csv"
+    )
+
+
+    df.to_csv(
+        processed_path,
+        index=False
+    )
+
+
+    print(
+        "\nNormalized dataset saved:"
+    )
+
+    print(
+        processed_path
+    )
+            
+
+>>>>>>> 855406a (Initial commit)
     print(
         "\nDetected problem:",
         problem_type.upper()
     )
 
+<<<<<<< HEAD
 
     # ========================================================
     # STEP 5
@@ -326,6 +536,33 @@ def run_autods(
         columns=[target]
     )
 
+=======
+    # ========================================================
+    # Separate Features and Target
+    # Exclude IDs and constant columns
+    # ========================================================
+
+    excluded_columns = (
+        schema_report[
+            "excluded_columns"
+        ]
+    )
+
+
+    columns_to_remove = (
+        [target]
+        +
+        excluded_columns
+    )
+
+
+    X = df.drop(
+        columns=columns_to_remove,
+        errors="ignore"
+    )
+
+
+>>>>>>> 855406a (Initial commit)
     y = df[target]
 
 
@@ -622,6 +859,7 @@ def run_autods(
 
     return {
 
+<<<<<<< HEAD
         "profile":
             profile,
 
@@ -646,3 +884,44 @@ def run_autods(
         "metrics_path":
             str(metrics_path)
     }    
+=======
+    "profile":
+        profile,
+
+    "problem_type":
+        problem_type,
+
+    "schema_report":
+        schema_report,
+
+    "quality_report":
+        quality_report,
+
+    "results":
+        results,
+
+    "models":
+        trained_models,
+
+    "best_model_name":
+        best_model_name,
+
+    "best_model":
+        best_model,
+
+    "model_path":
+        str(model_path),
+
+    "metrics_path":
+        str(metrics_path),
+
+    "eda_files":
+        eda_files,
+
+    "processed_dataset":
+        str(processed_path),
+
+    "quality_report_path":
+        quality_report_path
+}
+>>>>>>> 855406a (Initial commit)

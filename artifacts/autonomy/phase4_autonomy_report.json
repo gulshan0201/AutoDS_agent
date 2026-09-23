@@ -1,0 +1,74 @@
+{
+    "goal": "Predict which customers are likely to churn and improve predictive performance autonomously.",
+    "primary_metric": "f1",
+    "baseline_score": 0.8002,
+    "final_best_score": 0.8002,
+    "best_experiment": "phase1_baseline",
+    "best_model_path": "artifacts\\models\\best_model.joblib",
+    "rounds": 2,
+    "stop_reason": "performance_plateau",
+    "experiment_history": [
+        {
+            "experiment_id": "clf_logreg_balanced",
+            "status": "success",
+            "primary_metric": "f1",
+            "train_score": 0.766,
+            "validation_score": 0.7519,
+            "generalization_gap": 0.0141,
+            "train_metrics": {
+                "accuracy": 0.7531,
+                "precision": 0.8093,
+                "recall": 0.7531,
+                "f1": 0.766
+            },
+            "test_metrics": {
+                "accuracy": 0.7381,
+                "precision": 0.7966,
+                "recall": 0.7381,
+                "f1": 0.7519
+            },
+            "runtime_seconds": 0.512,
+            "artifact_path": "artifacts\\autonomy\\models\\clf_logreg_balanced.joblib",
+            "improvement": -0.0483,
+            "improved": false
+        },
+        {
+            "experiment_id": "clf_logreg_regularized",
+            "status": "success",
+            "primary_metric": "f1",
+            "train_score": 0.7989,
+            "validation_score": 0.7979,
+            "generalization_gap": 0.001,
+            "train_metrics": {
+                "accuracy": 0.8049,
+                "precision": 0.7966,
+                "recall": 0.8049,
+                "f1": 0.7989
+            },
+            "test_metrics": {
+                "accuracy": 0.8034,
+                "precision": 0.7956,
+                "recall": 0.8034,
+                "f1": 0.7979
+            },
+            "runtime_seconds": 0.81,
+            "artifact_path": "artifacts\\autonomy\\models\\clf_logreg_regularized.joblib",
+            "improvement": -0.0023,
+            "improved": false
+        }
+    ],
+    "autonomy_summary": {
+        "stop_reason": "performance_plateau",
+        "what_changed": [
+            "AutoDS completed a bounded autonomous experiment search."
+        ],
+        "successful_actions": [
+            "clf_logreg_balanced",
+            "clf_logreg_regularized"
+        ],
+        "failed_actions": [],
+        "next_recommendations": [
+            "Proceed to advanced model optimization."
+        ]
+    }
+}

@@ -1,5 +1,6 @@
 {
     "Logistic Regression": {
+<<<<<<< HEAD
         "accuracy": 0.7963,
         "precision": 0.7887,
         "recall": 0.7963,
@@ -16,5 +17,23 @@
         "precision": 0.7902,
         "recall": 0.8013,
         "f1": 0.7913
+=======
+        "accuracy": 0.8055,
+        "precision": 0.7979,
+        "recall": 0.8055,
+        "f1": 0.8002
+    },
+    "Random Forest": {
+        "accuracy": 0.7757,
+        "precision": 0.7625,
+        "recall": 0.7757,
+        "f1": 0.7659
+    },
+    "Gradient Boosting": {
+        "accuracy": 0.8062,
+        "precision": 0.7964,
+        "recall": 0.8062,
+        "f1": 0.7979
+>>>>>>> 855406a (Initial commit)
     }
 }

@@ -1,0 +1,69 @@
+{
+    "rows": 7043,
+    "columns": 21,
+    "quality_score": 98.0,
+    "score_note": "Heuristic project score; not a universal statistical standard.",
+    "missing_values": {
+        "TotalCharges": {
+            "count": 11,
+            "percentage": 0.16
+        }
+    },
+    "duplicate_rows": 0,
+    "duplicate_percentage": 0.0,
+    "outliers": {
+        "tenure": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -60.0,
+            "upper_bound": 124.0
+        },
+        "MonthlyCharges": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -46.025,
+            "upper_bound": 171.375
+        },
+        "TotalCharges": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -4688.4813,
+            "upper_bound": 8884.6688
+        }
+    },
+    "class_balance": {
+        "No": {
+            "count": 5174,
+            "percentage": 73.46
+        },
+        "Yes": {
+            "count": 1869,
+            "percentage": 26.54
+        }
+    },
+    "class_imbalance_warning": false,
+    "suspected_leakage": [],
+    "schema_findings": {
+        "converted_numeric_columns": [
+            "TotalCharges"
+        ],
+        "id_columns": [
+            "customerID"
+        ],
+        "constant_columns": [],
+        "high_cardinality_columns": [
+            "customerID"
+        ],
+        "discrete_numeric_columns": [
+            "SeniorCitizen"
+        ],
+        "excluded_columns": [
+            "customerID"
+        ]
+    },
+    "warnings": [
+        "Dataset contains missing values.",
+        "Probable identifier columns detected and excluded from training.",
+        "High-cardinality categorical columns detected."
+    ]
+}

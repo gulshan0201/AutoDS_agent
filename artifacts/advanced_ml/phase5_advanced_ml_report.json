@@ -1,0 +1,104 @@
+{
+    "problem_type": "classification",
+    "primary_metric": "f1_weighted",
+    "cv_folds": 3,
+    "optuna_trials_per_model": 8,
+    "baseline": {
+        "source_model": "artifacts\\models\\best_model.joblib",
+        "cv_mean": 0.797,
+        "cv_std": 0.0087,
+        "test_metrics": {
+            "accuracy": 0.8055,
+            "precision_macro": 0.753,
+            "recall_macro": 0.7268,
+            "f1_macro": 0.7376,
+            "f1_weighted": 0.8002,
+            "roc_auc": 0.8419
+        }
+    },
+    "advanced_models": {
+        "xgboost": {
+            "status": "success",
+            "best_params": {
+                "feature_percentile": 60,
+                "n_estimators": 522,
+                "max_depth": 3,
+                "learning_rate": 0.012715221674996044,
+                "subsample": 0.7873543705446269,
+                "colsample_bytree": 0.9679766463182027,
+                "min_child_weight": 2,
+                "reg_alpha": 0.0010033535364431987,
+                "reg_lambda": 0.0335219781564908
+            },
+            "cv_mean": 0.7946,
+            "cv_std": 0.0054,
+            "test_metrics": {
+                "accuracy": 0.7984,
+                "precision_macro": 0.7449,
+                "recall_macro": 0.7074,
+                "f1_macro": 0.7214,
+                "f1_weighted": 0.7901,
+                "roc_auc": 0.8436
+            },
+            "model_path": "artifacts\\advanced_ml\\models\\xgboost_optimized.joblib",
+            "optuna_trials": "artifacts\\advanced_ml\\optuna\\xgboost_optuna_trials.csv"
+        },
+        "lightgbm": {
+            "status": "success",
+            "best_params": {
+                "feature_percentile": 100,
+                "n_estimators": 430,
+                "learning_rate": 0.01781177602160391,
+                "num_leaves": 18,
+                "max_depth": 5,
+                "min_child_samples": 58,
+                "subsample": 0.8946361028189665,
+                "colsample_bytree": 0.8176105193931333,
+                "reg_alpha": 0.27755692175990654,
+                "reg_lambda": 0.253767224740743
+            },
+            "cv_mean": 0.7939,
+            "cv_std": 0.0084,
+            "test_metrics": {
+                "accuracy": 0.7977,
+                "precision_macro": 0.7435,
+                "recall_macro": 0.7078,
+                "f1_macro": 0.7213,
+                "f1_weighted": 0.7898,
+                "roc_auc": 0.8462
+            },
+            "model_path": "artifacts\\advanced_ml\\models\\lightgbm_optimized.joblib",
+            "optuna_trials": "artifacts\\advanced_ml\\optuna\\lightgbm_optuna_trials.csv"
+        },
+        "catboost": {
+            "status": "success",
+            "best_params": {
+                "feature_percentile": 100,
+                "iterations": 472,
+                "depth": 6,
+                "learning_rate": 0.024856993690912932,
+                "l2_leaf_reg": 5.7155358406918015,
+                "random_strength": 0.35313820358841763
+            },
+            "cv_mean": 0.7925,
+            "cv_std": 0.0071,
+            "test_metrics": {
+                "accuracy": 0.8034,
+                "precision_macro": 0.751,
+                "recall_macro": 0.7193,
+                "f1_macro": 0.7318,
+                "f1_weighted": 0.7968,
+                "roc_auc": 0.8435
+            },
+            "model_path": "artifacts\\advanced_ml\\models\\catboost_optimized.joblib",
+            "optuna_trials": "artifacts\\advanced_ml\\optuna\\catboost_optuna_trials.csv"
+        }
+    },
+    "selected_advanced_model": "xgboost",
+    "advanced_test_score": 0.7901,
+    "baseline_test_score": 0.8002,
+    "improvement": -0.0101,
+    "promoted": false,
+    "final_champion_source": "artifacts\\models\\best_model.joblib",
+    "final_champion_path": "artifacts\\advanced_ml\\phase5_final_champion.joblib"
+}

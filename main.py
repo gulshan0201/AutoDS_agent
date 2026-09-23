@@ -163,4 +163,101 @@ print(
 
 print(
     "===================================\n"
+<<<<<<< HEAD
+=======
+)
+
+print(
+    "\n==================================="
+)
+
+print(
+    "       PHASE 2 SUMMARY"
+)
+
+print(
+    "==================================="
+)
+
+
+print(
+    "\nData Quality Score:",
+    result[
+        "quality_report"
+    ][
+        "quality_score"
+    ],
+    "/100"
+)
+
+
+print(
+    "\nConverted Numeric Columns:"
+)
+
+print(
+    result[
+        "schema_report"
+    ][
+        "converted_numeric_columns"
+    ]
+)
+
+
+print(
+    "\nExcluded Columns:"
+)
+
+print(
+    result[
+        "schema_report"
+    ][
+        "excluded_columns"
+    ]
+)
+
+
+print(
+    "\nEDA Charts Generated:",
+    len(
+        result[
+            "eda_files"
+        ]
+    )
+)
+
+
+print(
+    "\nProcessed Dataset:"
+)
+
+print(
+    result[
+        "processed_dataset"
+    ]
+)
+
+
+print(
+    "\nData Quality Report:"
+)
+
+print(
+    result[
+        "quality_report_path"
+    ]
+)
+
+
+print(
+    "\n==================================="
+)
+
+print(
+    "PHASE 2 EXECUTION COMPLETED"
+)
+
+print(
+    "===================================\n"
+>>>>>>> 855406a (Initial commit)
 )
