@@ -1,0 +1,170 @@
+[
+    {
+        "sample_index": 0,
+        "prediction": "No",
+        "top_contributions": [
+            {
+                "feature": "numeric__tenure",
+                "feature_value": 1.6084834273893616,
+                "shap_value": -2.129283
+            },
+            {
+                "feature": "numeric__TotalCharges",
+                "feature_value": 2.707614130685993,
+                "shap_value": 1.508081
+            },
+            {
+                "feature": "numeric__MonthlyCharges",
+                "feature_value": 1.6299763471022684,
+                "shap_value": -1.053037
+            },
+            {
+                "feature": "categorical__Contract_Two year",
+                "feature_value": 1.0,
+                "shap_value": -0.602364
+            },
+            {
+                "feature": "categorical__InternetService_Fiber optic",
+                "feature_value": 1.0,
+                "shap_value": 0.358415
+            },
+            {
+                "feature": "categorical__Contract_Month-to-month",
+                "feature_value": 0.0,
+                "shap_value": -0.335997
+            },
+            {
+                "feature": "categorical__InternetService_DSL",
+                "feature_value": 0.0,
+                "shap_value": 0.195722
+            },
+            {
+                "feature": "categorical__Dependents_Yes",
+                "feature_value": 1.0,
+                "shap_value": -0.170309
+            },
+            {
+                "feature": "categorical__PaymentMethod_Credit card (automatic)",
+                "feature_value": 1.0,
+                "shap_value": -0.15926
+            },
+            {
+                "feature": "categorical__MultipleLines_No",
+                "feature_value": 0.0,
+                "shap_value": 0.14731
+            }
+        ]
+    },
+    {
+        "sample_index": 1,
+        "prediction": "Yes",
+        "top_contributions": [
+            {
+                "feature": "numeric__tenure",
+                "feature_value": -0.9966836022806536,
+                "shap_value": 1.104559
+            },
+            {
+                "feature": "numeric__MonthlyCharges",
+                "feature_value": 1.1687252637656007,
+                "shap_value": -0.77795
+            },
+            {
+                "feature": "categorical__InternetService_Fiber optic",
+                "feature_value": 1.0,
+                "shap_value": 0.358415
+            },
+            {
+                "feature": "categorical__Contract_Month-to-month",
+                "feature_value": 1.0,
+                "shap_value": 0.243308
+            },
+            {
+                "feature": "numeric__TotalCharges",
+                "feature_value": -0.6115059102562459,
+                "shap_value": -0.206935
+            },
+            {
+                "feature": "categorical__InternetService_DSL",
+                "feature_value": 0.0,
+                "shap_value": 0.195722
+            },
+            {
+                "feature": "categorical__Contract_Two year",
+                "feature_value": 0.0,
+                "shap_value": 0.169897
+            },
+            {
+                "feature": "categorical__PaymentMethod_Credit card (automatic)",
+                "feature_value": 1.0,
+                "shap_value": -0.15926
+            },
+            {
+                "feature": "categorical__MultipleLines_No",
+                "feature_value": 0.0,
+                "shap_value": 0.14731
+            },
+            {
+                "feature": "categorical__StreamingMovies_Yes",
+                "feature_value": 1.0,
+                "shap_value": 0.14281
+            }
+        ]
+    },
+    {
+        "sample_index": 2,
+        "prediction": "No",
+        "top_contributions": [
+            {
+                "feature": "numeric__tenure",
+                "feature_value": 0.346605647392948,
+                "shap_value": -0.562891
+            },
+            {
+                "feature": "categorical__InternetService_DSL",
+                "feature_value": 1.0,
+                "shap_value": -0.456684
+            },
+            {
+                "feature": "numeric__MonthlyCharges",
+                "feature_value": 0.44532428414406383,
+                "shap_value": -0.34652
+            },
+            {
+                "feature": "categorical__Contract_Month-to-month",
+                "feature_value": 0.0,
+                "shap_value": -0.335997
+            },
+            {
+                "feature": "numeric__TotalCharges",
+                "feature_value": 0.39948954089237143,
+                "shap_value": 0.315454
+            },
+            {
+                "feature": "categorical__InternetService_Fiber optic",
+                "feature_value": 0.0,
+                "shap_value": -0.281612
+            },
+            {
+                "feature": "categorical__Dependents_Yes",
+                "feature_value": 1.0,
+                "shap_value": -0.170309
+            },
+            {
+                "feature": "categorical__Contract_Two year",
+                "feature_value": 0.0,
+                "shap_value": 0.169897
+            },
+            {
+                "feature": "categorical__PaymentMethod_Credit card (automatic)",
+                "feature_value": 1.0,
+                "shap_value": -0.15926
+            },
+            {
+                "feature": "categorical__MultipleLines_No",
+                "feature_value": 0.0,
+                "shap_value": 0.14731
+            }
+        ]
+    }
+]

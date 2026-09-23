@@ -1,0 +1,94 @@
+{
+    "model_name": "AutoDS Final Champion",
+    "model_path": "artifacts\\advanced_ml\\phase5_final_champion.joblib",
+    "problem_type": "classification",
+    "target": "Churn",
+    "dataset": "data/processed/phase2_normalized.csv",
+    "dataset_rows": 7043,
+    "dataset_columns": 21,
+    "primary_metric": "f1_weighted",
+    "verified_final_metrics": {
+        "accuracy": 0.8055,
+        "precision_macro": 0.753,
+        "recall_macro": 0.7268,
+        "f1_macro": 0.7376,
+        "f1_weighted": 0.8002,
+        "roc_auc": 0.8419
+    },
+    "selected_advanced_model": "xgboost",
+    "advanced_model_promoted": false,
+    "data_quality_score": 98.0,
+    "data_quality_warnings": [
+        "Dataset contains missing values.",
+        "Probable identifier columns detected and excluded from training.",
+        "High-cardinality categorical columns detected."
+    ],
+    "top_explainability_features": [
+        {
+            "feature": "numeric__tenure",
+            "mean_abs_shap": 1.097267
+        },
+        {
+            "feature": "numeric__MonthlyCharges",
+            "mean_abs_shap": 0.544889
+        },
+        {
+            "feature": "numeric__TotalCharges",
+            "mean_abs_shap": 0.380365
+        },
+        {
+            "feature": "categorical__InternetService_Fiber optic",
+            "mean_abs_shap": 0.316941
+        },
+        {
+            "feature": "categorical__Contract_Month-to-month",
+            "mean_abs_shap": 0.281125
+        },
+        {
+            "feature": "categorical__Contract_Two year",
+            "mean_abs_shap": 0.278879
+        },
+        {
+            "feature": "categorical__InternetService_DSL",
+            "mean_abs_shap": 0.277142
+        },
+        {
+            "feature": "categorical__PaperlessBilling_No",
+            "mean_abs_shap": 0.165314
+        },
+        {
+            "feature": "categorical__MultipleLines_No",
+            "mean_abs_shap": 0.138304
+        },
+        {
+            "feature": "categorical__Dependents_Yes",
+            "mean_abs_shap": 0.12139
+        },
+        {
+            "feature": "categorical__InternetService_No",
+            "mean_abs_shap": 0.111232
+        },
+        {
+            "feature": "categorical__StreamingTV_No internet service",
+            "mean_abs_shap": 0.111232
+        },
+        {
+            "feature": "categorical__TechSupport_No internet service",
+            "mean_abs_shap": 0.111232
+        },
+        {
+            "feature": "categorical__StreamingMovies_No internet service",
+            "mean_abs_shap": 0.111232
+        },
+        {
+            "feature": "categorical__DeviceProtection_No internet service",
+            "mean_abs_shap": 0.111232
+        }
+    ],
+    "known_limitations": [
+        "Performance is dependent on the training dataset.",
+        "The model should be validated on future unseen data.",
+        "Feature importance and SHAP values indicate model influence, not causal relationships.",
+        "Data drift may reduce future model performance."
+    ]
+}

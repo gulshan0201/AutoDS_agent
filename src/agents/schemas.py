@@ -144,3 +144,22 @@ class AutonomySummary(BaseModel):
     failed_actions: list[str]
 
     next_recommendations: list[str]
+
+# ============================================================
+# PHASE 6
+# VERIFIED REPORT NARRATIVE
+# ============================================================
+
+class ReportNarrative(BaseModel):
+
+    executive_summary: str
+
+    model_performance_interpretation: str
+
+    data_quality_interpretation: str
+
+    explainability_interpretation: str
+
+    limitations: list[str]
+
+    recommendations: list[str]    
